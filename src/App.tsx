@@ -16,10 +16,9 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, path: "/app/data-capture/", element: <VehicleForm /> },
-      { path: "/app/route-record/", element: <RouteForm /> },
-      { path: "/app/data-list/", element: <DataList /> },
-      { path: "*", element: <ErrorPage /> },
+      { path: "data-capture/", element: <VehicleForm /> },
+      { path: "route-record/", element: <RouteForm /> },
+      { path: "data-list/", element: <DataList /> },
     ],
   },
 ]);
