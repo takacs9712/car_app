@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Outlet } from "react-router";
 import Sidebar from "../components/Sidebar";
 import { FaBars } from "react-icons/fa";
+import { Analytics } from "@vercel/analytics/react";
 
 function RootLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -24,6 +25,7 @@ function RootLayout() {
       >
         <FaBars />
       </button>
+      <Analytics />
     </div>
   );
 }
