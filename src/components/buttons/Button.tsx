@@ -1,10 +1,4 @@
-interface ButtonProps {
-  children: React.ReactNode;
-  href?: string;
-  className?: string;
-}
-
-export const Button: React.FC<ButtonProps> = ({ children, href }) => {
+const Button: React.FC<ButtonProps> = ({ children, href }) => {
   return (
     <a
       href={href}
@@ -14,3 +8,5 @@ export const Button: React.FC<ButtonProps> = ({ children, href }) => {
     </a>
   );
 };
+
+export default Button;

@@ -59,4 +59,9 @@ interface ModalProps {
   redirectPath: string;
 }
 
+interface ButtonProps {
+  children: React.ReactNode;
+  href?: string;
+  className?: string;
+}
   
