@@ -9,8 +9,7 @@ import DataList from "./pages/DataList";
 const router = createBrowserRouter([
   {
     path: "/",
-    errorElement: <ErrorPage />,
-    children: [{ index: true, element: <Main /> }],
+    element: <Main />,
   },
   {
     path: "/app",
