@@ -1,11 +1,23 @@
-const Button: React.FC<ButtonProps> = ({ children, href }) => {
+import { Link, LinkProps } from "react-router-dom";
+
+interface ButtonProps extends Omit<LinkProps, "to"> {
+  to?: string;
+}
+
+const Button: React.FC<ButtonProps> = ({
+  children,
+  to,
+  className,
+  ...rest
+}) => {
   return (
-    <a
-      href={href}
-      className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer"
+    <Link
+      to={to || ""}
+      className={`bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer ${className}`}
+      {...rest}
     >
       {children}
-    </a>
+    </Link>
   );
 };
 

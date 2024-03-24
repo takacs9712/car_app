@@ -14,7 +14,7 @@ export const DataCard: React.FC<CardProps> = ({ title, description, link }) => {
         <p className="text-gray-600">{description}</p>
         <div className="mt-6">
           <div className="mt-6">
-            <Button href={link}>Tovább</Button>
+            <Button to={link}>Tovább</Button>
           </div>
         </div>
       </div>

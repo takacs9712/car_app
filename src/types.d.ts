@@ -61,7 +61,8 @@ interface ModalProps {
 
 interface ButtonProps {
   children: React.ReactNode;
-  href?: string;
+  to? : string;
   className?: string;
 }
+
   

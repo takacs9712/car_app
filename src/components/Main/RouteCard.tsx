@@ -17,7 +17,7 @@ export const RouteCard: React.FC<CardProps> = ({
         <h2>{title}</h2>
         <p className="text-gray-600">{description}</p>
         <div className="mt-6">
-          <Button href={link}>Tovább</Button>
+          <Button to={link}>Tovább</Button>
         </div>
       </div>
     </div>
