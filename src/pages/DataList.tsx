@@ -10,14 +10,14 @@ const DataList: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  // Adatlekérés
+  // Data retrieval
   const fetchData = async () => {
     try {
       setLoading(true);
       const routeRef = ref(db, "routes");
       const snapshot: DataSnapshot = await get(routeRef);
 
-      // Hibakezelés
+      // Error handling
       if (!snapshot.exists()) {
         setData([]);
         return;
@@ -30,12 +30,12 @@ const DataList: React.FC = () => {
         })
       );
 
-      // minden elem feldolgozása, minden egyes elemhez lekér egy jármű adatot az adatbázisból
+      // mprocessing of each element, retrieves a vehicle data from the database for each element
       const finalData = await Promise.allSettled(
         fetchedData.map(async (route) => {
           const vehicleRef = ref(db, `vehicles/${route.vehicleId}`);
           const snapshot: DataSnapshot = await get(vehicleRef);
-          // A jármű adatok hozzáadása az aktuális útvonalhoz
+          // Add vehicle data to the current route
           return Object.assign(route, snapshot.val());
         })
       );
@@ -65,12 +65,12 @@ const DataList: React.FC = () => {
     fetchData();
   };
 
-  // Keresési állapot frissítése
+  // Search status update
   const updateSearchQuery = (query: string) => {
     setSearchQuery(query);
   };
 
-  // Szűrés az adatok alapján a keresési lekérdezés alapján
+  // Filter the data based on the search query
   const filteredData = data.filter((entry) =>
     entry.partnerName.toLowerCase().includes(searchQuery.toLowerCase())
   );

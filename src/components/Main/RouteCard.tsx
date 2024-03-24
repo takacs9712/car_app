@@ -1,5 +1,5 @@
 import adatlekeres from "../../assets/adatlekeres.webp";
-import { Button } from "../buttons/Button";
+import { Button } from "../Buttons/Button";
 
 export const RouteCard: React.FC<CardProps> = ({
   title,

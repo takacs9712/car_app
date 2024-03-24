@@ -1,5 +1,5 @@
 import adatmodositas from "../../assets/adatmodositas.webp";
-import { Button } from "../buttons/Button";
+import { Button } from "../Buttons/Button";
 
 export const GetCard: React.FC<CardProps> = ({ title, description, link }) => {
   return (
