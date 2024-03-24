@@ -1,11 +1,6 @@
 {
   "rewrites": [
-    {
-      "source": "/!",
-      "destination": "/Error.tsx"
-    },
-    {
-      "rewrites": [{ "source": "^[^.]+$", "destination": "/index.html" }]
-    }
+    { "source": "^!/", "destination": "/index.html" },
+    { "source": "^/[^.]+$", "destination": "/index.html" }
   ]
 }
