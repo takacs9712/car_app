@@ -2,11 +2,10 @@
   "rewrites": [
     {
       "source": "/!",
-      "destination": "/404.jsx"
+      "destination": "/Error.tsx"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "rewrites": [{ "source": "^[^.]+$", "destination": "/index.html" }]
     }
   ]
 }
