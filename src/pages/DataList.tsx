@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { get, ref, DataSnapshot } from "firebase/database";
 import { db } from "../firebaseConfig";
 import VehicleSelect from "../components/VehicleForm/VehicleSelect";
-import SearchForm from "../components/SearchForm";
+import SearchForm from "../components/SearchForm/SearchForm";
 import { tableHeader } from "../components/DataList/TableHeader";
 
 const DataList: React.FC = () => {

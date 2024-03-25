@@ -1,6 +1,6 @@
 import { useState, useRef, MouseEvent } from "react";
 import { Outlet } from "react-router";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../components/Sidebar/Sidebar";
 import { FaBars } from "react-icons/fa";
 
 function RootLayout() {
