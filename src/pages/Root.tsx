@@ -1,31 +1,43 @@
-import { useState } from "react";
+import { useState, useRef, MouseEvent } from "react";
 import { Outlet } from "react-router";
 import Sidebar from "../components/Sidebar";
 import { FaBars } from "react-icons/fa";
-import { Analytics } from "@vercel/analytics/react";
 
 function RootLayout() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+  const sidebarRef = useRef<HTMLDivElement>(null);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+  const handleOutsideClick = (event: MouseEvent<HTMLDivElement>) => {
+    if (
+      sidebarRef.current &&
+      !sidebarRef.current.contains(event.target as Node) &&
+      isSidebarOpen
+    ) {
+      setIsSidebarOpen(false);
+    }
+  };
+
+  const handleButtonClick = () => {
+    setIsSidebarOpen((prevState) => !prevState);
   };
 
   return (
-    <div className="flex">
-      <div className={`${isSidebarOpen ? "block" : "hidden"} sm:block w-64`}>
+    <div className="flex" onClick={handleOutsideClick}>
+      <div
+        ref={sidebarRef}
+        className={`sm:w-64 sm:block ${isSidebarOpen ? "block" : "hidden"}`}
+      >
         <Sidebar isOpen={isSidebarOpen} />
       </div>
       <div className="flex-1 pt-10 md:pt-2">
         <Outlet />
       </div>
       <button
-        className="sm:hidden fixed top-4 right-4 p-3 bg-gray-800 text-white rounded-full"
-        onClick={toggleSidebar}
+        className="fixed top-4 right-4 p-3 bg-gray-800 text-white rounded-full sm:hidden"
+        onClick={handleButtonClick}
       >
         <FaBars />
       </button>
-      <Analytics />
     </div>
   );
 }
