@@ -88,47 +88,35 @@ const DataList: React.FC = () => {
           <p>Betöltés...</p>
         ) : filteredData.length > 0 ? (
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+            <table className="min-w-full text-sm text-left text-gray-500 dark:text-gray-400 mb-4">
+              <thead className="text-gray-900 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                   {tableHeader.map((header, index) => (
-                    <th
-                      key={index}
-                      scope="col"
-                      className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
+                    <th key={index} scope="col" className="p-3">
                       {header}
                     </th>
                   ))}
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="bg-white divide-y border divide-gray-200">
                 {filteredData.map((entry, index) => (
                   <tr key={index}>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="p-3 whitespace-nowrap">
                       {entry.partnerName}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      {entry.type}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      {entry.fromWhere}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      {entry.toWhere}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="p-3 whitespace-nowrap">{entry.type}</td>
+                    <td className="p-3 whitespace-nowrap">{entry.fromWhere}</td>
+                    <td className="p-3 whitespace-nowrap">{entry.toWhere}</td>
+                    <td className="p-3 whitespace-nowrap">
                       {entry.distance} KM
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="p-3 whitespace-nowrap">
                       {entry.consumption} Liter
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="p-3 whitespace-nowrap">
                       {entry.plate_number}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      {entry.date}
-                    </td>
+                    <td className="p-3 whitespace-nowrap">{entry.date}</td>
                   </tr>
                 ))}
               </tbody>
