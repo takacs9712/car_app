@@ -112,8 +112,10 @@ const VehicleSelect: React.FC = () => {
   };
 
   return (
-    <div className="container">
-      <label htmlFor="vehicleSelect">Válasszon járművet:</label>
+    <div className="w-full">
+      <label htmlFor="vehicleSelect" className="block font-semibold">
+        Válasszon járművet:
+      </label>
       <select
         required
         id="vehicleSelect"

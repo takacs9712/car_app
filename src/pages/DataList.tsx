@@ -76,52 +76,42 @@ const DataList: React.FC = () => {
   );
 
   return (
-    <div className="mx-10 mt-8 overflow-x-auto">
-      <div className="flex flex-col overflow-auto">
-        <h1 className="text-xl font-semibold">Adatlekérdezés</h1>
-        <div className="py-10">
+    <div className="max-w-md md:max-w-full mx-10 mt-8 overflow-x-auto">
+      <h1 className="text-xl font-semibold mb-10">Adatlekérdezés</h1>
+      <div className="flex flex-col">
+        <div className="mb-4">
           <VehicleSelect />
         </div>
-        <h1 className="text-xl font-semibold mb-4">Adatbázis</h1>
+        <h1 className="text-xl font-semibold my-6">Adatbázis</h1>
         <SearchForm updateSearchQuery={updateSearchQuery} />
         {loading ? (
           <p>Betöltés...</p>
         ) : filteredData.length > 0 ? (
-          <div className="overflow-x-auto">
-            <table className="min-w-full text-sm text-left text-gray-500 dark:text-gray-400 mb-4">
-              <thead className="text-gray-900 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                <tr>
-                  {tableHeader.map((header, index) => (
-                    <th key={index} scope="col" className="p-3">
-                      {header}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y border divide-gray-200">
-                {filteredData.map((entry, index) => (
-                  <tr key={index}>
-                    <td className="p-3 whitespace-nowrap">
-                      {entry.partnerName}
-                    </td>
-                    <td className="p-3 whitespace-nowrap">{entry.type}</td>
-                    <td className="p-3 whitespace-nowrap">{entry.fromWhere}</td>
-                    <td className="p-3 whitespace-nowrap">{entry.toWhere}</td>
-                    <td className="p-3 whitespace-nowrap">
-                      {entry.distance} KM
-                    </td>
-                    <td className="p-3 whitespace-nowrap">
-                      {entry.consumption} Liter
-                    </td>
-                    <td className="p-3 whitespace-nowrap">
-                      {entry.plate_number}
-                    </td>
-                    <td className="p-3 whitespace-nowrap">{entry.date}</td>
-                  </tr>
+          <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 mb-4 ">
+            <thead className="text-gray-900 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <tr>
+                {tableHeader.map((header, index) => (
+                  <th key={index} scope="col" className="p-3">
+                    {header}
+                  </th>
                 ))}
-              </tbody>
-            </table>
-          </div>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y border divide-gray-200">
+              {filteredData.map((entry, index) => (
+                <tr key={index}>
+                  <td className="p-3">{entry.partnerName}</td>
+                  <td className="p-3">{entry.type}</td>
+                  <td className="p-3">{entry.fromWhere}</td>
+                  <td className="p-3">{entry.toWhere}</td>
+                  <td className="p-3">{entry.distance} KM</td>
+                  <td className="p-3">{entry.consumption} Liter</td>
+                  <td className="p-3">{entry.plate_number}</td>
+                  <td className="p-3">{entry.date}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         ) : (
           <p>Nem áll rendelkezésre adat</p>
         )}

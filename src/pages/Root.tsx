@@ -22,7 +22,7 @@ function RootLayout() {
   };
 
   return (
-    <div className="flex" onClick={handleOutsideClick}>
+    <div className="flex min-h-screen" onClick={handleOutsideClick}>
       <div
         ref={sidebarRef}
         className={`sm:w-64 sm:block ${isSidebarOpen ? "block" : "hidden"}`}
@@ -33,7 +33,7 @@ function RootLayout() {
         <Outlet />
       </div>
       <button
-        className="fixed top-4 right-4 p-3 bg-gray-800 text-white rounded-full sm:hidden"
+        className="fixed top-4 right-4 p-3 bg-gray-800 text-white rounded-full sm:hidden z-50"
         onClick={handleButtonClick}
       >
         <FaBars />
