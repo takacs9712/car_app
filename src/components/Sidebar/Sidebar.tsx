@@ -7,7 +7,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
     <div
       className={`${
         isOpen ? "block" : "hidden"
-      } fixed inset-y-0 left-0 w-64 bg-gray-800 text-white flex-col justify-between lg:block`}
+      } fixed inset-y-0 left-0 w-64 bg-gray-800 text-white flex-col justify-between sm:block`}
     >
       <div className="p-4">
         <h1 className="text-xl font-bold mb-10">Útvonal Nyilvántartás</h1>
