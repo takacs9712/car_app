@@ -1,46 +1,46 @@
 interface Route {
-    uuid: string;
-    date: string;
-    fromWhere: string;
-    toWhere: string;
-    partnerName: string;
-    distance: number;
-    type: string;
-    vehicleId: string;
-  }
-  
-  interface Vehicle extends Route {
-    consumption: number;
-    plate_number: string;
-    averageConsumption: number;
-  }
+  uuid: string;
+  date: string;
+  fromWhere: string;
+  toWhere: string;
+  partnerName: string;
+  distance: number;
+  type: string;
+  vehicleId: string;
+}
 
-  interface Vehicle {
-    uuid: string;
-    type: string;
-  }
+interface Vehicle extends Route {
+  consumption: number;
+  plate_number: string;
+  averageConsumption: number;
+}
 
-  interface RouteData {
-    uuid: string;
-    date: string;
-    fromWhere: string;
-    toWhere: string;
-    partnerName: string;
-    distance: string;
-    type: string;
-    vehicleId: string;
-  }
+interface Vehicle {
+  uuid: string;
+  type: string;
+}
 
-  interface SearchFormProps {
-    updateSearchQuery: (query: string) => void;
-  }
+interface RouteData {
+  uuid: string;
+  date: string;
+  fromWhere: string;
+  toWhere: string;
+  partnerName: string;
+  distance: string;
+  type: string;
+  vehicleId: string;
+}
 
-  interface CardProps {
-    title: string;
-    description: string;
-    link: string;
-  }
-  
+interface SearchFormProps {
+  updateSearchQuery: (query: string) => void;
+}
+
+interface CardProps {
+  title: string;
+  description: string;
+  link: string;
+}
+
 interface SidebarProps {
   isOpen: boolean;
 }
@@ -61,8 +61,8 @@ interface ModalProps {
 
 interface ButtonProps {
   children: React.ReactNode;
-  to? : string;
+  to?: string;
   className?: string;
 }
 
-  
+
