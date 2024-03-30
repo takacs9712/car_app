@@ -1,7 +1,7 @@
 import { useState, useRef, MouseEvent } from "react";
 import { Outlet } from "react-router";
 import Sidebar from "../components/Sidebar/Sidebar";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function RootLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
@@ -21,6 +21,10 @@ function RootLayout() {
     setIsSidebarOpen((prevState) => !prevState);
   };
 
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
     <div className="flex min-h-screen" onClick={handleOutsideClick}>
       <div
@@ -32,12 +36,23 @@ function RootLayout() {
       <div className="flex-1 pt-10 md:pt-2">
         <Outlet />
       </div>
-      <button
-        className="fixed top-4 right-4 p-3 bg-gray-800 text-white rounded-full sm:hidden z-50"
-        onClick={handleButtonClick}
-      >
-        <FaBars />
-      </button>
+      <div className="fixed top-4 right-4 z-50">
+        {isSidebarOpen ? (
+          <button
+            className="p-3 bg-gray-800 text-white rounded-full"
+            onClick={closeSidebar}
+          >
+            <FaTimes />
+          </button>
+        ) : (
+          <button
+            className="p-3 bg-gray-800 text-white rounded-full"
+            onClick={handleButtonClick}
+          >
+            <FaBars />
+          </button>
+        )}
+      </div>
     </div>
   );
 }
