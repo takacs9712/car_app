@@ -4,7 +4,7 @@ interface ButtonProps extends Omit<LinkProps, "to"> {
   to?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   children,
   to,
   className,
@@ -20,5 +20,3 @@ const Button: React.FC<ButtonProps> = ({
     </Link>
   );
 };
-
-export default Button;

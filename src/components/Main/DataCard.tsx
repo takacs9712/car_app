@@ -1,5 +1,5 @@
 import adatrogzites from "../../assets/adatrogzites.webp";
-import Button from "../Buttons/Button";
+import { Button } from "../Buttons/Button";
 
 export const DataCard: React.FC<CardProps> = ({ title, description, link }) => {
   return (
