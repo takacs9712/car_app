@@ -36,7 +36,7 @@ function RootLayout() {
       <div className="flex-1 pt-10 md:pt-2">
         <Outlet />
       </div>
-      <div className="fixed top-4 right-4 z-50">
+      <div className="fixed top-4 right-4 z-50 md:hidden">
         {isSidebarOpen ? (
           <button
             className="p-3 bg-gray-800 text-white rounded-full"
