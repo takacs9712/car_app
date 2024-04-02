@@ -6,6 +6,9 @@ import VehicleForm from "./pages/VehicleForm";
 import RouteForm from "./pages/RouteForm";
 import DataList from "./pages/DataList";
 import { inject } from "@vercel/analytics";
+import { injectSpeedInsights } from "@vercel/speed-insights";
+
+injectSpeedInsights();
 
 inject();
 
