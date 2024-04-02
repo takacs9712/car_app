@@ -1,10 +1,10 @@
 export const tableHeader = [
-  "Partner Neve",
-  "Autó típusa",
-  "Honnan",
-  "Hová",
-  "Távolság (km)",
-  "Fogyasztás",
-  "Rendszám",
-  "Dátum",
+  "Partner Name",
+  "Type",
+  "From Where",
+  "To Where",
+  "Distance (KM)",
+  "Consumption (Liter)",
+  "Plate Number",
+  "Date",
 ];

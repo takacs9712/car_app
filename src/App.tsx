@@ -5,6 +5,9 @@ import ErrorPage from "./pages/ErrorPage";
 import VehicleForm from "./pages/VehicleForm";
 import RouteForm from "./pages/RouteForm";
 import DataList from "./pages/DataList";
+import { inject } from "@vercel/analytics";
+
+inject();
 
 const router = createBrowserRouter([
   {
